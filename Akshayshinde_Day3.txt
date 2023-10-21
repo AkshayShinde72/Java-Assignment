@@ -1,0 +1,107 @@
+Developer code:
+
+/**
+ * 
+ */
+package pck1;
+
+/**
+ * @author admin
+ */
+public class c1 {
+private int num;
+
+/**
+ * @return the num
+ */
+public int getNum() {
+	return num;
+}
+
+/**
+ * @param num the num to set
+ */
+public void setNum(int num) {
+	this.num = num;
+}
+
+/**
+ * @param num parameterized
+ */
+public c1(int num) {
+	super();
+	this.num = num;
+}
+
+/**
+ * default
+ */
+public c1() {
+	super();
+	// TODO Auto-generated constructor stub
+}
+
+}
+
+/**
+ * 
+ */
+package pck1;
+
+/**
+ * @author admin
+ */
+public class c2 {
+private String s;
+
+/**
+ * @param s
+ */
+public c2(String s) {
+	super();
+	this.s = s;
+}
+
+/**
+ * 
+ */
+public c2() {
+	super();
+	// TODO Auto-generated constructor stub
+}
+
+@Override
+public String toString() {
+	return "c2 [s=" + s + "]";
+}
+
+
+
+}
+
+
+
+Client code:
+
+package pck2;
+
+import pck1.c1;
+import pck1.c2;
+
+public class cl1 {
+
+	public static void main(String[] args) {
+		c1 m1=new c1();
+		c2 m2=new c2();
+		
+		m1.setNum(10);
+		System.out.println(m1.getNum());
+		
+		System.out.println (m2.toString());
+		
+		
+		
+
+	}
+
+}
