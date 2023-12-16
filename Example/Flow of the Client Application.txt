@@ -1,0 +1,27 @@
+
+Result.jsp takes user input i.e. name entered by client inside textfield.
+
+Result.jsp will call HelloWorldProxy's sayHelloWorld(user input)
+
+HelloWorldProxy has a reference of "HelloWorld" interface which has "sayHelloWorld(String)" as a method declared.
+
+sayHelloWorld() method of HelloWorldProxy class invokes "_initHelloWorldProxy()" private method of the same class.
+
+_initHelloWorldProxy() method invokes  HelloWorldServiceLocator class's getHelloWorld() method.
+
+getHelloWorld() method of HelloWorldServiceLocator class returns instance of "HelloWorldSoapBindingStub" class.
+
+HelloWorldSoapBindingStub is the actual stub class (proxy) which has "sayHelloWord(String)" method.
+
+This HelloWorldSoapBindingStub instance is returned to _initHelloWorldProxy() 
+
+_initHelloWorldProxy() method stores this stub instance inside "HelloWorld" interface reference.
+
+now control goes back to "sayHelloWorld(String)" method of HelloWorldProxy class.
+
+it calls "sayHelloWorld(String)" method on the reference of "HelloWorld".
+
+Since the reference of "HelloWorld" refers to Stub instance, "sayHelloWorld(String)" method of Stub will be invoked.
+This "sayHelloWorld(String)" method knows how to go over the network and invoke actual method (service method).
+
+if the actual method returns any value that value client will get through Stub.

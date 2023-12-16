@@ -1,0 +1,5 @@
+With Eclipse Oxygen you can do the below things:
+
+Place your libraries in WEB-INF/lib
+Project -> Configure Build Path -> Add Library -> Web App Library
+Maven will take them when installing the project.
